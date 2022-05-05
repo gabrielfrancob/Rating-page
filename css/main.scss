@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+@mixin smooth{
+    transition: 0.2s linear;
+}
+    
+$font: Overpass, sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: hsl(216, 12%, 8%);
+
+    .area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        main {
+            background: linear-gradient(0deg, hsl(222, 21%, 10%) 0%, hsl(222, 21%, 15%) 100%);
+            width: 400px;
+            height: 450px;
+            padding: 30px;
+            border-radius: 40px;
+            font-family: $font;
+
+            .circle {
+                display: flex;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: hsl(210, 20%, 17%);
+            }
+
+            .circle.star {
+                justify-content: center;
+                align-items: center;
+                align-self: flex-start;
+                margin-bottom: 50px;
+            }
+
+            .rating-area {
+                display: flex;
+                margin: 30px 0px;
+                justify-content: space-between;
+                
+                .rating-button {
+                    justify-content: center;
+                    align-items: center;
+                    color: hsl(220, 10%, 64%);
+                    @include smooth();
+                    
+                    &:hover {
+                        background-color: hsl(0, 0%, 65%);
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+                
+                .active{
+                    background-color: hsl(25, 97%, 53%);
+                    color: white;
+                }
+            }
+
+            h1 {
+                color: hsl(180, 100%, 100%);
+                margin: 20px 0px;
+            }
+            p {
+                color: hsl(220, 10%, 64%);
+                margin: 20px 0px;
+                line-height: 20pt;
+            }
+            button {
+                width: 100%;
+                height: 50px;
+                border-radius: 50px;
+                border-style: none;
+                background-color: hsl(25, 97%, 53%);
+                color: white;
+                font-size: 1.2em;
+                letter-spacing: 2px;
+                margin: 30px 0px;
+                @include smooth();
+
+                &:hover{
+                    background-color: white;
+                    cursor: pointer;
+                    color: hsl(25, 97%, 53%);
+                }
+            }
+        }
+    }
+}
+
